@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'Trajan Pro';
+	src: url('../TrajanPro/TrajanPro-Bold.woff') format('woff'), url('../TrajanPro/TrajanPro-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+	font-family: 'Trajan Pro';
+	src: url('../TrajanPro/TrajanPro-Regular.woff') format('woff'), url('../TrajanPro/TrajanPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
