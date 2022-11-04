@@ -1,14 +1,404 @@
 @charset "utf-8";
 /* CSS Document of Cancer Surgery India - by Shani */
+//mixins by Shani 
+@mixin hover {  
+    @include transition(color 0.6s linear); 
+    &:hover {
+        color: #ee2e2d;
+        @include transition(color 0.6s linear);  
+    } 
+    &:focus {
+        color: #ee2e2d;
+        @include transition(color 0s linear);     
+    }
+    &:active {
+        color: #BC100F; 
+        @include transition(color 0s linear);
+    }
+} 
+
+@mixin hovers($obj1, $obj2) {
+    text-decoration: none;
+    @include transition(color 0.6s linear); 
+    &:hover, &:focus {
+        color: $obj1;
+        text-decoration: none;
+        outline: none;
+    }
+    &:active { 
+        color: $obj2;
+        text-decoration: none;
+        outline: none;
+        @include transition(color 0s linear); 
+    }
+}
+
+@mixin bghover($obj1, $obj2) {
+    &:hover,
+    &:focus {
+        background-color: $obj1;
+    }
+    &:active {
+        background-color: $obj2;
+    }
+}
+
+@mixin bghovers($obj1, $obj2) {
+    @include transition(color 0.6s linear); 
+    &:hover,
+    &:focus {
+        background-color: $obj1;
+        @include transition(color 0.6s linear);
+    }
+    &:active {
+        background-color: $obj2;
+        @include transition(all 0s linear); 
+    }
+}
+
+@mixin btn_1($bgcolor, $bdr1, $bdr2, $hbrd1, $hbrd2) {
+    font-weight: 600;
+    display: block;
+    padding: 6px;
+    background-color: $bgcolor;
+    border: thin solid;
+    border-color: $bdr1 $bdr2 $bdr2 $bdr1;  
+    &:hover, &:focus{ 
+        text-decoration: none;
+        border-color: $hbrd1 $hbrd2 $hbrd2 $hbrd1;
+        box-shadow: none;
+        outline: none;
+    }
+    &:active{
+        border-color: $hbrd2 $hbrd1 $hbrd1 $hbrd2; 
+        box-shadow: 0px 0px 5px 3px #D2D2D2 inset;
+        @include transition(all 0s linear);
+    }
+}
+@mixin btn_hover {
+    @include transin_all; 
+    &:hover,
+    &:focus {
+        color: #18253F;
+        background-color: #ee2e2d;
+    }
+    &:active {
+        color: #18253F;
+        background-color: #ee2e2d;
+        @include box-shadow(inset 1px 1px 3px 2px rgba(0, 0, 0, 0.15));
+        @include transition(all 0s linear);
+    }
+}
+
+@mixin btn_hovers($obj1, $obj2) {
+    @include transin_all;
+    &:hover,
+    &:focus {
+        color: $obj1;
+        background-color: #ffffff;
+        @include transin_all;
+    }
+    &:active {
+        color: $obj2;
+        background-color: #ffffff;
+        @include transition(all 0s linear);
+    }
+}
+
+@mixin abs {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+} 
+
+@mixin fixed {
+    position: fixed; 
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+@mixin transin_all {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+@mixin transition($val) {
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -o-transition: $val;
+    transition: $val;
+}
+
+@mixin form_elem($obj) {
+    select::-ms-expand {
+        display: none;
+    }
+    input::-webkit-input-placeholder {
+        color: $obj;
+    }
+    input::-moz-placeholder {
+        color: $obj;
+    }
+    input:-ms-input-placeholder {
+        color: $obj;
+    }
+    input:-moz-placeholder {
+        color: $obj;
+    }
+    textarea::-webkit-input-placeholder {
+        color: $obj;
+    }
+    textarea::-moz-placeholder {
+        color: $obj;
+    }
+    textarea:-ms-input-placeholder {
+        color: $obj;
+    }
+    textarea:-moz-placeholder {
+        color: $obj;
+    }
+}
+
+@mixin apperance($obj) {
+    -webkit-appearance: $obj;
+    -moz-appearance: $obj;
+}
+
+@mixin linear-gradient-H($obj, $obj2, $obj3) {
+    background-image: -webkit-linear-gradient($obj - 90 + deg, $obj2, $obj3);
+    background-image: -o-linear-gradient($obj + deg, $obj2, $obj3);
+    background-image: linear-gradient($obj + deg, $obj2, $obj3);
+}
+
+@mixin linear-gradient-V($obj, $obj2, $obj3) {
+    background-image: -webkit-linear-gradient($obj + 90 + deg, $obj2, $obj3);
+    background-image: -moz-linear-gradient($obj + deg, $obj2, $obj3);
+    background-image: -o-linear-gradient($obj + deg, $obj2, $obj3);
+    background-image: linear-gradient($obj + deg, $obj2, $obj3);
+}
+ 
+@mixin linear-gradient-to($obj, $obj2, $obj3) {
+    background-image: -webkit-linear-gradient($obj, $obj2, $obj3);
+    background-image: -moz-linear-gradient($obj, $obj2, $obj3);
+    background-image: -o-linear-gradient($obj, $obj2, $obj3);
+    background-image: linear-gradient($obj, $obj2, $obj3);
+}
+
+@mixin radial-gradient($obj, $obj2, $obj3, $obj4) {
+    background-image: -webkit-radial-gradient($obj, $obj2, $obj3, $obj4);
+    background-image: -moz-radial-gradient($obj, $obj2, $obj3, $obj4);
+    background-image: -o-radial-gradient($obj, $obj2, $obj3, $obj4);
+    background-image: radial-gradient($obj, $obj2, $obj3, $obj4);
+}
+
+@mixin border-radius($color) {
+    -webkit-border-radius: $color;
+    -moz-border-radius: $color;
+    border-radius: $color;
+}
+
+@mixin transform($prop) { 
+    -webkit-transform: $prop;
+    -moz-transform: $prop;
+    -ms-transform: $prop;
+    -o-transform: $prop;
+    transform: $prop;
+}
+
+@mixin transform-origin($prop) {
+    -webkit-transform-origin: $prop;
+    -moz-transform-origin: $prop;
+    -ms-transform-origin: $prop;
+    -o-transform-origin: $prop;
+    transform-origin: $prop;
+}
+
+@mixin box-shadow($val) {
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+    box-shadow: $val;
+}
+
+@mixin box-shadow2($val, $val2) {
+    -webkit-box-shadow: $val, $val2;
+    -moz-box-shadow: $val, $val2;
+    box-shadow: $val, $val2;
+}
+
+@mixin animation($anim1) {
+    -webkit-animation: $anim1;
+    -moz-animation: $anim1;
+    -o-animation: $anim1;
+    animation: $anim1;
+}
+
+@mixin outline($obj) {
+    outline: $obj;
+    &:focus {
+        outline: $obj;
+    }
+}
+
+@mixin backface-visibility($obj) {
+    -webkit-backface-visibility: $obj;
+    -moz-backface-visibility: $obj;
+    backface-visibility: $obj;
+}
+
+@mixin user-select($obj) {
+    -ms-user-select: $obj;
+    -webkit-user-select: $obj;
+    -moz-user-select: $obj;
+    user-select: $obj;
+}
+
+@mixin hyphens($obj) {
+    -webkit-hyphens: $obj;
+    -moz-hyphens: $obj;
+    -ms-hyphens: $obj;
+    hyphens: $obj;
+}
+
+@mixin flex {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+}
+
+@mixin fleximp {
+  display: -webkit-box!important;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box!important;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox!important;      /* TWEENER - IE 10 */
+  display: -webkit-flex!important;     /* NEW - Chrome */
+  display: flex!important;
+}
+
+@mixin flexin($obj) {
+    -webkit-flex: $obj;
+    -ms-flex: $obj;
+    flex: $obj;
+}
+
+@mixin flex-direction($obj) {
+    -webkit-flex-direction: $obj;
+    -ms-flex-direction: $obj;
+    flex-direction: $obj;
+}
+
+@mixin align-items($obj) {
+    -webkit-align-items: $obj;
+    align-items: $obj;
+}
+
+@mixin space-between {
+    @include justify-content(space-between);
+}
+
+@mixin scrollbar($obj1, $obj2, $obj3, $obj4, $obj5) {
+    ::-webkit-scrollbar {
+        width: $obj1;
+        height: $obj2;
+    }
+    ::-webkit-scrollbar-track {
+        background: $obj3;
+        border: none;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $obj4;
+        display: block;
+        @include border-radius(6px);
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background-color: $obj5;
+    }
+}
+
+@mixin select {
+    select::-ms-expand {
+        display: none;
+    }
+}
+
+@mixin justify-content($obj) {
+    -webkit-justify-content: $obj;
+    justify-content: $obj;
+}
+
+@mixin filter($obj) {
+    -webkit-filter: $obj;
+    filter: $obj;
+}
+
+@mixin activebtn {
+    @include box-shadow(inset 1px 1px 3px 2px rgba(0, 0, 0, 0.15));
+    @include transition(all 0s);
+}
+
+@mixin activetrans {
+    @include transition(all 0s);
+}
+
+@mixin background-size ($obj) {
+    -webkit-background-size: $obj;
+    -moz-background-size: $obj;
+    -o-background-size: $obj;
+    background-size: $obj;
+}
+@mixin bgim {
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+}
+
+@mixin bgimtop {
+    background-position: center top;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+}
+
+@mixin bgbefore($obj) {
+    &:before {
+        content: " ";
+
+        background-color: $obj;
+        @include abs;
+        z-index: 1;
+    }
+}
+
+@mixin abscenter{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	@include transform(translate(-50%, -50%));
+}
+
+@mixin cols($ob1){
+    $ob2: $ob1 - 2;
+    @debug $ob2;
+    .cols-#{$ob1}{ 
+        width: #{$ob2}#{"%"};
+        flex: 0 0 #{$ob2}#{"%"};
+        @media (max-width: 576px){
+            width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+}
 @import url("../webfonts/csi-fonts.css");
 body { 
     padding: 0px;
     margin: 0px;
     line-height: normal;
-    background-image: url(../images/background-assets/background.jpg);
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-size: 100% auto;
+    background-color: #ffffff;
     font-size: 10px;
     .container {
         max-width: 90%;
@@ -18,8 +408,11 @@ body {
         height: auto;
     }
 }
-
 #csi_cover_wrap {
+    background-image: url(../images/background-assets/background.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 100% auto;
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -229,12 +622,12 @@ header .navbar {
     }
      .csi-card-columns {
         margin-top: 15px;
-        margin-right: 0px;
+        margin-right: 0px; 
         margin-bottom: 15px;
         margin-left: 0px;
         border: thin dotted #ABDD22;
         padding: 25px 25px 25px 30px;
-        font-size: 86%;
+        font-size: 80%;
     }
      .csi-card-columns h2 {
         margin-bottom: 6px;
@@ -323,17 +716,25 @@ header .navbar {
         padding: 0px;
         margin: 0px;
     }
-    ul li a {
+    a {
         color: #333;
         text-decoration: none;
-    }
-    ul li a:hover {
-        color: #C0003B;
-        text-decoration: underline;
-    }
-    ul li a:active {
-        color: #790025;
-        text-decoration: none;
+        &:hover, &:focus {
+            color: #C0003B;
+            text-decoration: underline;
+            outline: none;
+        }
+        &:active {
+            color: #790025;
+            text-decoration: none;
+            outline: none;
+        }
+        &.btn{
+            font-size: 90%;
+            font-weight: 600;
+            display: block;
+            @include btn_1(#ebebeb, #DADADA, #C7C7C7, #E1CED7, #C8B0B0);
+        }
     }
 }
 
@@ -346,30 +747,57 @@ footer {
     color: #333333;
     background-color: #F3F3F3;
     display: block;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding: 30px;
+    margin: 0px;
+    padding: 0px;
     font-family: "TrajanPro Bold";
     font-size: 100%;
     border-top: 1px solid #DADADA;
     h2 {
-        font-size: 120%;
+        font-size: 125%;
+        font-weight: bold;
     }
     p {
         font-size: 100%;
     }
     h2, p{
+        color: #525252;
         margin-bottom: 6px;
     }
     a {
-        color: #333333;
+        color: #525252; 
         text-decoration: none;
+        @include hovers(#0056b3, #004591);
+        &.btn{
+            font-size: 90%;
+            font-weight: 600;
+            display: block;
+            margin-top: 12px;
+            @include btn_1(#ebebeb, #DADADA, #C7C7C7, #CFDBE1, #B0C0C8);
+            &:hover, &:focus{
+                color: #0056b3;
+            }
+            &:active{
+                color: #004591;
+            }
+        }
+    }
+    sup{
+        font-family: "Gill Sans", "Gill Sans MT", Arial, "sans-serif";
+        font-size: 100%;
     }
     .resources_secn1{
+        font-family: 'Lora';
+        font-size: 120%;
         max-width: 25%;
-        padding: 15px; 
+        padding: 15px;
+    }
+    #csi_footer{
+        padding: 30px 30px 15px;
+    }
+    #csi_cpyrts{
+        padding: 30px;
+        background-color: #ffffff;
+        border-top: 1px solid #DFDFDF;
     }
 }
 
@@ -529,6 +957,12 @@ header .navbar .form-inline .form-control {
         }
         .resources_secn1{
             padding: 1.098vw;
+        }
+        #csi_footer{
+            padding: 2.196vw 2.196vw 1.098vw;
+        }
+        #csi_cpyrts{
+            padding: 2.196vw;
         }
     }
 }
