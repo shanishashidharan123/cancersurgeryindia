@@ -428,7 +428,7 @@ body {
     margin-left: 0px;
     margin-bottom: 0px;
     font-size: 130%;
-    padding: 6px 25px;
+    padding: 6px 0px;
 }
 #csi_hd_1 a, #date {
     color: #F0F0F0;
@@ -440,7 +440,7 @@ body {
 }
 #csi_hd_2 {
     background-color: rgba(254,201,27,0.96);
-    padding: 0px 25px;
+    padding: 0px;
     .logo {
         display: block;
         width: 100%;
@@ -483,7 +483,7 @@ body {
     text-decoration: none;
     margin: 0px;
     font-size: 140%;
-    padding: 12px;
+    padding: 15px;
     a {
         font-family: "Trajan Pro";
         font-weight: bold;
@@ -503,7 +503,7 @@ body {
 header .navbar {
     font-family: "Trajan Pro";
     margin: 0px;
-    padding: 0px 25px;
+    padding: 0px;
     background-color: #C5C5C5;
     font-weight: normal;
     border-top: 1px solid #D1D1D1;
@@ -544,10 +544,7 @@ header .navbar {
     margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-right: 25px;
-    padding-left: 25px;
+    padding: 30px 0px;
     font-size: 100%;
     line-height: normal;
 }
@@ -596,7 +593,7 @@ header .navbar {
     font-family: 'Lora';
 }
 #csi_content {
-    padding: 25px;
+    padding: 35px;
     color: #333333;
      h1 {
         font-size: 160%;
@@ -628,57 +625,59 @@ header .navbar {
         border: thin dotted #ABDD22;
         padding: 25px 25px 25px 30px;
         font-size: 80%;
+        h2 {
+            margin-bottom: 6px;
+            position: relative;
+            &:before {
+                font-family: 'csi';
+                font-size: 66%;
+                content: "\e900";
+                color: #FEC91B;
+                display: block;
+                position: absolute;
+                left: -15px;
+                top: 4px;
+            }
+         }
     }
-     .csi-card-columns h2 {
-        margin-bottom: 6px;
-        position: relative;
-    }
-     .csi-card-columns h2:before {
-        content: "";
-        background-color: #FEC91B;
-        display: block;
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        left: -15px;
-        top: 5px;
-    }
-     .csi-columns-3 {
+    .csi-columns-3 {
         column-count: 3;
         column-gap: 65px;
         column-rule: thin dotted #ABDD22;
-    }
-     .csi-columns-3 p {
-        margin: 0px 0px 6px;
-    }
-     .csi-columns-3 p img {
-        margin: 0px;
-        border: thin solid;
-        border-color: #abdd22 #9AC71F #9AC71F #abdd22;
-    }
-     .csi-columns-3 ul.d-flex li {
-        display: inline-block;
-        margin-right: 6px;
-    }
-     .csi-columns-3 ul {
-        padding: 0px;
-        margin: 0px 0px 24px;
-    }
-     .csi-columns-3 ul li {
-        display: block;
-        list-style: none;
-    }
-     .csi-columns-3 a {
-        color: #000000;
-        text-decoration: none;
-    }
-     .csi-columns-3 a:hover {
-        color: #5466b0;
-        text-decoration: underline;
-    }
-     .csi-columns-3 a:active {
-        color: #435392;
-        text-decoration: none;
+        p {
+            margin: 0px 0px 6px;
+            img {
+                margin: 0px;
+                border: thin solid;
+                border-color: #dddd22 #c7c41f #c7c41f #dddd22;
+            }
+        }
+        ul {
+            padding: 0px;
+            margin: 0px 0px 24px;
+            &.d-flex{
+                li {
+                    display: inline-block;
+                    margin-right: 6px;
+                }
+            }
+            li {
+                display: block;
+                list-style: none;
+            }
+        }
+        a {
+            color: #000000;
+            text-decoration: none;
+            &:hover {
+                color: #5466b0;
+                text-decoration: underline;
+            }
+            &:active {
+                color: #435392;
+                text-decoration: none;
+            }
+        }
     }
      .csi_secn1 {
         display: block;
@@ -763,6 +762,27 @@ footer {
         color: #525252;
         margin-bottom: 6px;
     }
+    ul{
+        font-size: 100%;
+        padding: 0px;
+        margin: 0px 0px 6px;
+        li{
+            font-size: 100%;
+            display: block;
+            position: relative;
+            padding: 0px 0px 0px 25px;
+            list-style: none;
+            a:before{
+                font-family: 'csi';
+                font-size: 70%;
+                content: "\e900";
+                position: absolute;
+                left: 12px;
+                top: 3px;
+                color: inherit;
+            }
+        }
+    }
     a {
         color: #525252; 
         text-decoration: none;
@@ -792,10 +812,10 @@ footer {
         padding: 15px;
     }
     #csi_footer{
-        padding: 30px 30px 15px;
+        padding: 30px 0px 15px;
     }
     #csi_cpyrts{
-        padding: 30px;
+        padding: 30px 0px;
         background-color: #ffffff;
         border-top: 1px solid #DFDFDF;
     }
@@ -835,7 +855,7 @@ footer {
         padding-bottom: 25px;
     }
     #csi_content_area {
-        margin: 25px 0px;
+        margin: 30px 0px;
     }
     @media (min-width: 768px){
         footer .resources_secn1{
@@ -871,48 +891,53 @@ body .container {
     /*    width: 98%;*/
     max-width: 90%;
 }
-header .navbar a, header .navbar .form-control, header .navbar .btn {
-    height: 2.562vw;
-}
-    header .navbar .form-control, header .navbar .btn{
+header .navbar{
+    a, .form-control, .btn {
+        height: 2.562vw;
+    }
+    .form-control, .btn{
         padding: 0.4392vw 0.8784vw;
     }
-header .navbar .form-inline .form-control {
-    height: 2.562vw;
+    .form-inline .form-control {
+        height: 2.562vw;
+    }
 }
+    #csi_cover_wrap main{
+        padding: 2.196vw 0px;
+    }
 #csi_hd_1 {
-    padding: 0.4392vw 1.83vw;
+    padding: 0.4392vw 0vw;
 }
 #csi_hd_2 .logo {
     padding: 1.175vw 1.175vw 0.588vw;
 }
 #csi_hd_3 {
-    padding: 0.8785vw;
-}
-#csi_hd_3 a {
-    margin: 0.366vw;
-    padding: 0.8785vw;
+    padding: 1.098vw;
+    a {
+        margin: 0.366vw;
+        padding: 0.8785vw;
+    }
 }
 .navbar-expand-lg .navbar-nav .nav-link {
     padding: 0.5856vw;
 }
 .csi_main {
     padding-top: 0.8784vw;
-}
-.csi_main:before {
-    height: 0.8784vw;
+    &:before {
+        height: 0.8784vw;
+    }
 }
 #csi_menu_left ul li a {
     padding: 0.4392vw 0.8784vw;
 }
 #csi_content {
-    padding: 1.83vw;
+    padding: 2.562vw;
     .csi-card-columns {
         margin-top: 1.098vw;
         padding: 1.83vw 1.83vw 1.83vw 2.196vw;
     }
     .csi-columns-3 {
-        column-gap: 4.758vw;
+        column-gap: 4.758vw; 
     }
     h1, h2, p {
         margin-bottom: 0.5856vw;
@@ -923,11 +948,9 @@ header .navbar .form-inline .form-control {
     .csi-columns-3 ul {
         margin-bottom: 1.7568vw;
     }
-    .csi-card-columns h2:before {
-        width: 0.4392vw;
-        height: 0.4392vw;
+    .csi-card-columns h2:before { 
         left: -1.098vw;
-        top: 0.366vw;
+        top: 0.2928vw;
     }
 }
 
@@ -951,18 +974,24 @@ header .navbar .form-inline .form-control {
         margin-right: -1.098vw;
     }
     footer {
-        padding: 2.196vw;
         h2, p{
             margin-bottom: 0.4392vw;
+        }
+        ul li {
+            padding-left: 1.83vw;
+            a:before{
+                left: 0.8784vw;
+                top: 0.2196vw;
+            }
         }
         .resources_secn1{
             padding: 1.098vw;
         }
         #csi_footer{
-            padding: 2.196vw 2.196vw 1.098vw;
+            padding: 2.196vw 0vw 1.098vw;
         }
         #csi_cpyrts{
-            padding: 2.196vw;
+            padding: 2.196vw 0vw;
         }
     }
 }
