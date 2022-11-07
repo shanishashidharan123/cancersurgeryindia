@@ -630,23 +630,23 @@ header .navbar {
     font-family: 'Lora';
 }
 #csi_content {
-    padding: 35px;
+    padding: calc(35em/15);
     color: #333333;
      h1 {
         font-size: 160%;
         text-transform: capitalize;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin-bottom: calc(12em/24);
     }
      h2 {
         font-size: 130%;
         text-transform: capitalize;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin-bottom: calc(12em/19.5);
     }
      p {
         font-weight: 400;
-        margin-bottom: 8px;
+        margin-bottom: calc(15em/12);
     }
      ul {
         font-size: 100%;
@@ -658,22 +658,22 @@ header .navbar {
         margin-bottom: 0px;
     }
      .csi-card-columns {
-        margin-top: 15px;
+        margin-top: calc(15em/12);
         margin-right: 0px; 
-        margin-bottom: 15px;
+        margin-bottom: calc(15em/12);
         margin-left: 0px;
         border: thin dotted #ABDD22;
-        padding: 25px 25px 25px 40px;
+        padding: calc(25em/12) calc(25em/12) calc(25em/12) calc(40em/12);
         font-size: 80%;
     }
     .csi-columns-3 {
         column-count: 3;
-        column-gap: 80px;
+        column-gap: calc(80em/12);
         column-rule: thin dotted #ABDD22;
         column-fill: balance;
         h2 {
-            margin-top: 24px;
-            margin-bottom: 6px;
+            margin-top: calc(24em/15.6);
+            margin-bottom: calc(6em/15.6);
             position: relative;
             &:before {
                 font-family: 'csi';
@@ -682,15 +682,15 @@ header .navbar {
                 color: #FEC91B;
                 display: block;
                 position: absolute;
-                left: -15px;
-                top: 4px;
+                left: calc(-15em/10.296);
+                top: calc(4em/10.296);
             }
             &:first-child{
                 margin-top: 0px;
             }
          }
         p {
-            margin: 0px 0px 6px;
+            margin: 0px 0px calc(6em/12);
             img {
                 margin: 0px;
                 border: thin solid;
@@ -699,14 +699,14 @@ header .navbar {
         }
         ul {
             padding: 0px;
-            margin: 0px 0px 6px;
+            margin: 0px 0px calc(6em/12);
             &:last-child{
                 margin: 0px;
             }
             &.d-flex{
                 li {
                     display: inline-block;
-                    margin-right: 6px;
+                    margin-right: calc(6em/12);
                 }
             }
             li {
@@ -714,19 +714,19 @@ header .navbar {
                 list-style: none;
                 position: relative;
                 a{
-                    margin-left: 12px;
+                    margin-left: calc(12em/12);
                     display: block;
                     &:before{
                         content: "";
                         display: block;
                         background: none;
-                        width: 6px;
-                        height: 6px;
+                        width: calc(6em/12);
+                        height: calc(6em/12);
                         border: 1px solid #fec91b;
                         border-radius: 100%;
                         position: absolute;
-                        left: 1px;
-                        top: 4px;
+                        left: calc(1em/12);
+                        top: calc(4em/12);
                     }
                 }
             }
@@ -743,10 +743,6 @@ header .navbar {
                 text-decoration: none;
             }
         }
-    }
-     .csi_secn1 {
-        display: block;
-        margin-bottom: 12px;
     }
 }
 
@@ -915,10 +911,7 @@ footer {
         padding: 2.5em;
     }
     #csi_content_area {
-        margin: 30px 0px 0px;
-    }
-    #csi_content{
-        padding: 6vw;
+        margin: calc(30em/15) 0px 0px;
     }
     @media (min-width: 768px){
         footer .resources_secn1{
@@ -980,44 +973,7 @@ body .container {
     /*    width: 98%;*/
     max-width: 90%;
 }
-#csi_content {
-    padding: 2.562vw;
-    .csi-card-columns {
-        margin-top: 1.098vw;
-        padding: 1.83vw 1.83vw 1.83vw 2.928vw;
-    }
-    .csi-columns-3 {
-        column-gap: 5.856vw; 
-        h2{
-            margin-top: 1.7568vw;
-            margin-bottom: 0.4392vw;
-            &:before { 
-                left: -1.098vw;
-                top: 0.2928vw;
-            }
-        }
-        p, ul, img{
-            margin-bottom: 0.4392vw;
-        }
-        ul{
-            margin-bottom: 0.4392vw;
-            li{
-                a{
-                    &:before{
-                        width: $highres * 6; 
-                        height:  $highres * 6;
-                        border: $highres dotted #fec91b;
-                        left: $highres;
-                        top: $highres * 4;
-                    }
-                }
-            }
-        }
-    }
-    h1, h2, p {
-        margin-bottom: 0.5856vw;
-    }
-}
+
 
 /*    Right Menu*/
 #csi_menu_right {
