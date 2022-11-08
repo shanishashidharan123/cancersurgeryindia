@@ -975,12 +975,12 @@ footer {
 }
 
 @media (min-width:1367px) {
-/* relative responsive for higher screen 1px = 0.0732vw*/
+/* relative responsive for higher screen is 1px = 0.731528895391368vw */
     
-$highres: 0.0732vw;
+$highres: 0.731528895391368vw;
         
 body {
-    font-size: 0.735vw;
+    font-size: calc(10vw/1367 * 100);
 }
 body .container {
     max-width: 90%;
@@ -988,12 +988,12 @@ body .container {
     
 /*    Bootstrap rows and colums*/
 [class*="col-"], body .container{
-    padding-left: 1.098vw;
-    padding-right: 1.098vw;
+    padding-left: calc(15vw/1367 * 100);
+    padding-right: calc(15vw/1367 * 100);
 }
 body .row{
-    margin-left: -1.098vw;
-    margin-right: -1.098vw;
+    margin-left: calc(-15vw/1367 * 100);
+    margin-right: calc(-15vw/1367 * 100);
 }
 }
 
