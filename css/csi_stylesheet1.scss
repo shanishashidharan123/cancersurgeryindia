@@ -59,7 +59,6 @@
 @mixin btn_1($bgcolor, $bdr1, $bdr2, $hbrd1, $hbrd2) {
     font-weight: 600;
     display: block;
-    padding: 6px;
     background-color: $bgcolor;
     border: thin solid;
     border-color: $bdr1 $bdr2 $bdr2 $bdr1;  
@@ -427,15 +426,15 @@ body {
     text-decoration: none;
     background-color: #002B51;
     margin: 0px;
-    padding: 0.4615em 0px;
+    padding: calc(6em/13) 0px;
 }
 #csi_hd_1 a, #date {
     color: #F0F0F0;
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
-    padding-right: 0.4615em;
-    padding-left: 0.4615em;
+    padding-right: calc(6em/13);
+    padding-left: calc(6em/13);
 }
 #csi_hd_2 {
     background-color: rgba(254,201,27,0.96);
@@ -482,12 +481,12 @@ body {
     text-decoration: none;
     margin: 0px;
     font-size: 140%;
-    padding: 1.0714em;
+    padding: calc(15em/14);
     a {
         font-family: "Trajan Pro";
         font-weight: bold;
-        margin: 0.35714em;
-        padding: 0.85714em;
+        margin: calc(5em/14);
+        padding: calc(12em/14);
         display: inline-block;
         border: thin outset #FEC91B;
         color: #FFFFFF;
@@ -540,7 +539,7 @@ header .navbar {
         border: thin inset #98a3d0;
         border-radius: 0px;
         outline: none;
-        padding: 0.3em 0.6em;
+        padding: 0.5em 1em;
         .navbar-toggler-icon{
             &:before{
                 font-family: 'csi';
@@ -617,10 +616,18 @@ header .navbar {
         color: #333333;
         background-color: #E3E6E9;
         display: block;
-        padding: 0.54545em 1.0909em;
+        padding: calc(6em/11) calc(12em/11);
         line-height: normal;
         border: 1px outset #ffffff;
         text-decoration: none;
+        &:hover, &:focus{
+            background-color: #ebedef;
+            outline: none;
+        }
+        &:active{
+            background-color: #E3E6E9;
+            border-style: inset;
+        }
     }
 }
 
@@ -749,15 +756,15 @@ header .navbar {
 /*Menu Right*/
 #csi_menu_right {
     border-top: 1px dotted #ababab;
-    padding: 25px;
+    padding: calc(25em/15);
     h2 {
         font-size: 120%;
         text-transform: capitalize;
         font-weight: 600;
-        margin-bottom: 6px;
+        margin-bottom: calc(6em/18);
     }
     p {
-        margin: 0px 0px 6px;
+        margin: 0px 0px calc(6em/15);
     }
     img {
         margin: 0px;
@@ -768,7 +775,7 @@ header .navbar {
         font-size: 100%;
         list-style: none;
         padding: 0px;
-        margin: 0px 0px 6px;
+        margin: 0px 0px calc(6em/15);
     }
     ul li {
         font-size: 100%;
@@ -793,13 +800,14 @@ header .navbar {
             font-size: 90%;
             font-weight: 600;
             display: block;
+            padding: calc(6em/13.5);
             @include btn_1(#ebebeb, #DADADA, #C7C7C7, #E1CED7, #C8B0B0);
         }
     }
 }
 
 .csi_content_right {
-    padding: 0px 0px 18px;
+    padding: 0px 0px calc(18em/15);
 }
 
 /*footer section*/
@@ -819,27 +827,31 @@ footer {
     p {
         font-size: 100%;
     }
-    h2, p{
+    h2{
         color: #222222;
-        margin-bottom: 6px;
+        margin-bottom: calc(6em/15);
+    }
+    p{
+        color: #222222;
+        margin-bottom: calc(6em/12);
     }
     ul{
         font-size: 100%;
         padding: 0px;
-        margin: 0px 0px 6px;
+        margin: 0px 0px calc(6em/12);
         li{
             font-size: 100%;
             display: block;
             position: relative;
-            padding: 0px 0px 0px 25px;
+            padding: 0px 0px 0px calc(25em/12);
             list-style: none;
             a:before{
                 font-family: 'csi';
                 font-size: 70%;
                 content: "\e900";
                 position: absolute;
-                left: 12px;
-                top: 3px;
+                left: calc(12em/8.4);
+                top: calc(3em/8.4);
                 color: inherit;
             }
         }
@@ -852,7 +864,8 @@ footer {
             font-size: 90%;
             font-weight: 600;
             display: block;
-            margin-top: 12px;
+            padding: calc(6em/10.8);
+            margin-top: calc(12em/10.8);
             @include btn_1(#ebebeb, #DADADA, #C7C7C7, #CFDBE1, #B0C0C8);
             &:hover, &:focus{
                 color: #0056b3;
@@ -871,13 +884,13 @@ footer {
         font-family: 'Lora';
         font-size: 120%;
         max-width: 25%;
-        padding: 15px;
+        padding: calc(15em/12);
     }
     #csi_footer{
-        padding: 30px 0px 15px;
+        padding: 3em 0px 1.5em;
     }
     #csi_cpyrts{
-        padding: 30px 0px;
+        padding: 3em 0px;
         background-color: #ffffff;
         border-top: 1px solid #DFDFDF;
     }
@@ -940,7 +953,7 @@ footer {
             column-fill: balance;
             orphans: 1;
             widows: 1;
-            column-gap: 30px;
+            column-gap: calc(30em/15);
             .csi_content_right{
                 display: inline-block;
                 width: 100%;
@@ -970,22 +983,10 @@ body {
     font-size: 0.735vw;
 }
 body .container {
-    /*    width: 98%;*/
     max-width: 90%;
 }
-
-
-/*    Right Menu*/
-#csi_menu_right {
-    padding: 1.83vw;
-    h2, p, ul {
-        margin-bottom: 0.4392vw;
-    }
-}
-.csi_content_right {
-    padding-bottom: 1.3176vw;
-}
-
+    
+/*    Bootstrap rows and colums*/
 [class*="col-"], body .container{
     padding-left: 1.098vw;
     padding-right: 1.098vw;
@@ -993,27 +994,6 @@ body .container {
 body .row{
     margin-left: -1.098vw;
     margin-right: -1.098vw;
-}
-footer {
-    h2, p{
-        margin-bottom: 0.4392vw;
-    }
-    ul li {
-        padding-left: 1.83vw;
-        a:before{
-            left: 0.8784vw;
-            top: 0.2196vw;
-        }
-    }
-    .resources_secn1{
-        padding: 1.098vw;
-    }
-    #csi_footer{
-        padding: 2.196vw 0vw 1.098vw;
-    }
-    #csi_cpyrts{
-        padding: 2.196vw 0vw;
-    }
 }
 }
 
