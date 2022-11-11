@@ -427,14 +427,24 @@ body {
     background-color: #002B51;
     margin: 0px;
     padding: calc(6em/13) 0px;
-}
-#csi_hd_1 a, #date {
-    color: #F0F0F0;
-    text-decoration: none;
-    display: inline-block;
-    vertical-align: middle;
-    padding-right: calc(6em/13);
-    padding-left: calc(6em/13);
+    outline: none;
+    a, #date {
+        color: #F0F0F0;
+        text-decoration: none;
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: calc(6em/13);
+        padding-left: calc(6em/13);
+        outline: none;
+    }
+    a{
+        &:hover, &:focus{
+            color: #FEC91B;
+        }
+        &:active{
+            color: #D2A100;
+        }
+    }
 }
 #csi_hd_2 {
     background-color: rgba(254,201,27,0.96);
@@ -443,15 +453,25 @@ body {
         display: block;
         width: 100%;
         padding: 1.6em 1.6em 0.8em;
+        position: relative;
+        outline: none;
         img {
             width: 100%;
             height: auto;
+        }
+        &:focus{
+            &:before{
+                content: "";
+                @include abs;
+                box-shadow: 0px 0px 0.5em 0.5em #eab60b inset;
+            }
         }
     }
 }
 #csi_features1 {
     display: block;
     position: relative;
+    outline: none;
     &:before {
         content: "";
         background: none;
@@ -465,6 +485,13 @@ body {
     }
     img {
         width: 100%;
+    }
+    &:focus{
+        &:before{
+            content: "";
+            @include abs;
+            box-shadow: 0px 0px 0.6em 0.6em #F4C21B inset;
+        }
     }
 }
 #animation_container {
@@ -492,6 +519,14 @@ body {
         color: #FFFFFF;
         text-decoration: none;
         background-color: #002342;
+        outline: none;
+        &:hover, &:focus{
+            color: #FEC91B;
+            background-color: #002342;
+        }
+        &:active{
+            border-style: inset;
+        }
     }
 }
 #csi_navbar {
@@ -513,6 +548,7 @@ header .navbar {
         text-align: left;
         text-decoration: none;
         white-space: nowrap;
+        background-color: #cfcfcf;
         border-radius: 0px;
         margin: 0px;
         padding: 0.5em 1em;
@@ -528,7 +564,7 @@ header .navbar {
             box-shadow: none;
         }
         &:active{
-            background-color: #CACACA;
+            background-color: #cfcfcf;
             border: thin inset #98a3d0;
         }
     }
@@ -536,6 +572,7 @@ header .navbar {
         font-size: 120%;
         width: 100%;
         text-align: center;
+        background-color: #cfcfcf;
         border: thin inset #98a3d0;
         border-radius: 0px;
         outline: none;
@@ -567,6 +604,7 @@ header .navbar {
         flex-wrap: nowrap;
         .form-control {
             width: 100%;
+            background-color: #ffffff;
             &:focus{
                 box-shadow: none;
             }
@@ -614,6 +652,7 @@ header .navbar {
     }
     ul li a {
         color: #333333;
+        font-weight: normal;
         background-color: #E3E6E9;
         display: block;
         padding: calc(6em/11) calc(12em/11);
@@ -741,7 +780,8 @@ header .navbar {
         a {
             color: #000000;
             text-decoration: none;
-            &:hover {
+            outline: none;
+            &:hover, &:focus {
                 color: #5466b0;
                 text-decoration: underline;
             }
