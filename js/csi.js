@@ -76,4 +76,6 @@ $(function () {
   init();
   csitime();
   setInterval(csitime, 60000);
+    $("body").addClass("csi_loadin");
+    $("#csi_loader").fadeOut(1000);
 });
