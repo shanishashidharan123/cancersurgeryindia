@@ -384,6 +384,14 @@ body {
     .container {
         max-width: 90%;
     }
+    .container, [class*="col-"] {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+    .row{
+        margin-left: -1.5em;
+        margin-right: -1.5em;
+    }
     img {
         max-width: 100%;
         height: auto;
@@ -444,6 +452,14 @@ body {
     margin: 0px;
     padding: calc(6em/13) 0px;
     outline: none;
+    .container, [class*="col-"] {
+        padding-left: calc(15em/13);
+        padding-right: calc(15em/13);
+    }
+    .row{
+        margin-left: calc(-15em/13);
+        margin-right: calc(-15em/13);
+    }
     a, #date {
         color: #F0F0F0;
         text-decoration: none;
@@ -526,6 +542,10 @@ body {
     margin: 0px;
     font-size: 140%;
     padding: calc(15em/14);
+    .container {
+        padding-left: calc(15em/14);
+        padding-right: calc(15em/14);
+    }
     a {
         font-family: "Trajan Pro";
         font-weight: bold;
@@ -691,6 +711,14 @@ header .navbar {
 #csi_content_area {
     font-size: 150%;
     font-family: 'Lora';
+    [class*="col-"] {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .row{
+        margin-left: -1em;
+        margin-right: -1em;
+    }
 }
 #csi_content {
     padding: calc(35em/15);
@@ -1044,13 +1072,13 @@ body .container {
 }
     
 /*    Bootstrap rows and colums  */
-[class*="col-"], body .container{
-    padding-left: calc(15vw/1367 * 100);
-    padding-right: calc(15vw/1367 * 100); 
-}
-body .row{
-    margin-left: calc(-15vw/1367 * 100);
-    margin-right: calc(-15vw/1367 * 100);
-}
+//[class*="col-"], body .container{
+//    padding-left: calc(15vw/1367 * 100);
+//    padding-right: calc(15vw/1367 * 100); 
+//}
+//body .row{
+//    margin-left: calc(-15vw/1367 * 100);
+//    margin-right: calc(-15vw/1367 * 100);
+//}
 }
 
